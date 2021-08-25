@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Input } from 'reactstrap';
-import Filter from './FilterComponent';
 import { JOBS } from '../shared/Jobs';
+import JobListings from './JobListingsComponent';
 
 class Search extends Component {
     constructor(props){
@@ -26,7 +26,7 @@ class Search extends Component {
             <div>
                 
                 <input type="text" value={this.state.userInput} onChange={this.handleChange} />
-                <Filter jobs={filteredJobs}/> 
+                <JobListings jobs={filteredJobs}/> 
                 Search: {this.state.userInput}
             </div>
         );

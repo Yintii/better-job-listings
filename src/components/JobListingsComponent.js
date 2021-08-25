@@ -9,7 +9,7 @@ class JobListings extends Component {
         };
     }
     render(){
-        const jobListings = this.props.listings.map(job => {
+        const jobListings = this.props.jobs.map(job => {
             return(
                 <div key={job.id} className="col m-1">
                     <Card>
