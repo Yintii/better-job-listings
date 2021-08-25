@@ -11,7 +11,7 @@ class JobListings extends Component {
     render(){
         const jobListings = this.props.jobs.map(job => {
             return(
-                <div key={job.id} className="col m-1">
+                <div key={job.id} className="col-sm-12 col-md-6 col-lg-4 my-3">
                     <Card>
                         <CardBody>
                             <CardHeader dark className="bg-dark text-white">

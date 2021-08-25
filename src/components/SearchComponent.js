@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input } from 'reactstrap';
+import { Input, Label } from 'reactstrap';
 import { JOBS } from '../shared/Jobs';
 import JobListings from './JobListingsComponent';
 
@@ -23,11 +23,14 @@ class Search extends Component {
             }
         });
         return(
-            <div>
+            <div className="container">
+                <div className="row px-5">
+                    <Label className="mt-5" for="searchInput">Search:</Label>
+                    <Input className="mb-5" id="searchInput" type="text" value={this.state.userInput} onChange={this.handleChange} />
+                    <JobListings jobs={filteredJobs}/> 
+                </div>
+
                 
-                <input type="text" value={this.state.userInput} onChange={this.handleChange} />
-                <JobListings jobs={filteredJobs}/> 
-                Search: {this.state.userInput}
             </div>
         );
     }
