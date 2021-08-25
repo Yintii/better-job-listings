@@ -2,7 +2,7 @@ export const JOBS = [
     {
         id:0,
         company: 'Microsoft',
-        position: 'Data Scientist',
+        position: 'Javascript',
         pay: '$70/hr'
     },
     {

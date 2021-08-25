@@ -5,11 +5,11 @@ class JobListings extends Component {
     constructor(props){
         super(props);
         this.state = {
-            selectedJob: null
+            
         };
     }
     render(){
-        const jobListings = this.props.jobs.map(job => {
+        const jobListings = this.props.listings.map(job => {
             return(
                 <div key={job.id} className="col m-1">
                     <Card>
@@ -33,6 +33,7 @@ class JobListings extends Component {
             <div className="container">
                 <div className="row">
                     {jobListings}
+                    
                 </div>
             </div>
         );
