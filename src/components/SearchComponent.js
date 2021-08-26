@@ -9,7 +9,7 @@ class Search extends Component {
         this.state = {userInput: null, jobs: JOBS}
         this.handleChange = this.handleChange.bind(this);
     }
-
+/* */
     handleChange(event){
         this.setState({userInput: event.target.value});
     }
@@ -29,8 +29,6 @@ class Search extends Component {
                     <Input className="mb-5" id="searchInput" type="text" value={this.state.userInput} onChange={this.handleChange} />
                     <JobListings jobs={filteredJobs}/> 
                 </div>
-
-                
             </div>
         );
     }

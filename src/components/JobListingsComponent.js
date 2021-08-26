@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardHeader, CardText, CardBody } from 'reactstrap';
 
 class JobListings extends Component {
     constructor(props){

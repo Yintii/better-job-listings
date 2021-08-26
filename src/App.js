@@ -19,7 +19,6 @@ class App extends Component {
             <NavbarBrand href="/">JobSearcher</NavbarBrand>
           </div>
         </Navbar>
-
         <Search />
       </div>
     );
