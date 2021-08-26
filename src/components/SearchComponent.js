@@ -16,7 +16,7 @@ class Search extends Component {
 
     render(){
         const filteredJobs = this.state.jobs.filter(job => {
-            if (this.state.userInput == "" || this.state.userInput == null){
+            if (this.state.userInput === "" || this.state.userInput === null){
                 return job;
             }else{
                 return job.position.toLowerCase().includes(this.state.userInput.toLowerCase());
