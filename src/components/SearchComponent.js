@@ -9,7 +9,7 @@ class Search extends Component {
         this.state = {userInput: null, jobs: JOBS}
         this.handleChange = this.handleChange.bind(this);
     }
-/* */
+
     handleChange(event){
         this.setState({userInput: event.target.value});
     }
@@ -19,7 +19,8 @@ class Search extends Component {
             if (this.state.userInput === "" || this.state.userInput === null){
                 return job;
             }else{
-                return job.position.toLowerCase().includes(this.state.userInput.toLowerCase());
+                return job.position.toLowerCase().includes(this.state.userInput.toLowerCase()), 
+                       job.company.toLowerCase().includes(this.state.userInput.toLowerCase());
             }
         });
         return(
