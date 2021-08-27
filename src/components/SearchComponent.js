@@ -19,7 +19,9 @@ class Search extends Component {
             if (this.state.userInput === "" || this.state.userInput === null){
                 return job;
             }else{
-                return (job.position.toLowerCase().includes(this.state.userInput.toLowerCase()), job.company.toLowerCase().includes(this.state.userInput.toLowerCase()));
+                if(job.position.toLowerCase().includes(this.state.userInput.toLowerCase()) || job.company.toLowerCase().includes(this.state.userInput.toLowerCase())){
+                    return job;
+                } 
             }
         });
         return(
