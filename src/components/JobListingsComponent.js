@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Collapse, Card, CardTitle, CardHeader, CardText, CardBody, UncontrolledCollapse } from 'reactstrap';
+import { Button, Card, CardTitle, CardText, CardBody, UncontrolledCollapse } from 'reactstrap';
 
 const JobListings = (props) => {
-
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
-
-
     const jobListings = props.jobs.map(job => {
             return(
                 <div key={job.id} className="col-md-12 col-lg-4 my-1">
