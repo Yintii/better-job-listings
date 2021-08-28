@@ -1,30 +1,31 @@
-import React, { Component } from 'react';
-import { Card, CardHeader, CardText, CardBody } from 'reactstrap';
+import React, { useState } from 'react';
+import { Button, Collapse, Card, CardTitle, CardHeader, CardText, CardBody, UncontrolledCollapse } from 'reactstrap';
 
-class JobListings extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            
-        };
-    }
-    render(){
-        const jobListings = this.props.jobs.map(job => {
+const JobListings = (props) => {
+
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
+
+
+    const jobListings = props.jobs.map(job => {
             return(
-                <div key={job.id} className="col-sm-12 col-md-6 col-lg-4 my-3">
+                <div key={job.id} className="col-md-12 col-lg-4 my-1">
                     <Card>
                         <CardBody>
-                            <CardHeader dark className="bg-dark text-white">
+                            <CardTitle className="bg-dark text-white">
                                 {job.company}
-                            </CardHeader>
+                            </CardTitle>
                             <CardText>
                                 {job.position}
                                 <br/>
                                 {job.pay}
                             </CardText>
+                            <Button color="primary" id={`toggler-${job.id}`}>Details</Button>
+                            <UncontrolledCollapse toggler={`#toggler-${job.id}`} className="m-5">
+                                {job.description}
+                            </UncontrolledCollapse>
                         </CardBody>
                     </Card>
-                    
                 </div>
             );
         });
@@ -33,11 +34,10 @@ class JobListings extends Component {
             <div className="container">
                 <div className="row">
                     {jobListings}
-                    
                 </div>
             </div>
         );
     }
-}
+
 
 export default JobListings;
