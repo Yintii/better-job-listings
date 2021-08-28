@@ -1,10 +1,15 @@
 import React from 'react';
-import { Button, Card, CardTitle, CardText, CardBody, UncontrolledCollapse } from 'reactstrap';
+import { Button,
+         Card, 
+         CardTitle, 
+         CardText, 
+         CardBody,
+         UncontrolledCollapse } from 'reactstrap';
 
 const JobListings = (props) => {
     const jobListings = props.jobs.map(job => {
             return(
-                <div key={job.id} className="col-md-12 col-lg-4 my-1">
+                <div key={job.id} className="col-md-12 col-lg-6 my-1">
                     <Card>
                         <CardBody>
                             <CardTitle className="bg-dark text-white">
@@ -15,8 +20,9 @@ const JobListings = (props) => {
                                 <br/>
                                 {job.pay}
                             </CardText>
-                            <Button color="primary" id={`toggler-${job.id}`}>Details</Button>
-                            <UncontrolledCollapse toggler={`#toggler-${job.id}`} className="m-5">
+                            <Button className="col m-1" color="primary" id={`toggler-${job.id}`}>Details</Button>
+                            <Button className="col m-1" color="warning">Apply</Button>
+                            <UncontrolledCollapse toggler={`#toggler-${job.id}`} className="my-5">
                                 {job.description}
                             </UncontrolledCollapse>
                         </CardBody>

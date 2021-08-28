@@ -1,28 +1,17 @@
-import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import React, { useState } from 'react';
 import Search from './components/SearchComponent';
-
+import Header from './components/HeaderComponent';
+import addJob from './helpers/addJob';
 import './App.css';
 
-class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-
-    };
-  }
-  render(){
+const App = (props) => {
     return (
       <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">JobSearcher</NavbarBrand>
-          </div>
-        </Navbar>
+        <Header />
         <Search />
       </div>
     );
-  }
+
 
 }
 
