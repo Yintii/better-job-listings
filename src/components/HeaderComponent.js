@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, ModalHeader, ModalBody, Button, 
          Form, FormGroup, Label, Input,
          Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import { JOBS } from '../shared/Jobs';
+//import { JOBS } from '../shared/Jobs';
 
 const Header = () => {
     const [modal, setModal] = useState(false);
