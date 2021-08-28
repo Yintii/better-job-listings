@@ -1,4 +1,3 @@
-import { ListGroupItem } from "reactstrap";
 
 export const JOBS = [
     {

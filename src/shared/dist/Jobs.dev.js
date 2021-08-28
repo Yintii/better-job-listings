@@ -4,9 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.JOBS = void 0;
-
-var _reactstrap = require("reactstrap");
-
 var JOBS = [{
   id: 0,
   company: 'Microsoft',
