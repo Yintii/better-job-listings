@@ -9,9 +9,12 @@ const Header = () => {
             <Navbar dark color="primary">
                 <div className="container">
                     <NavbarBrand href="/">JobSearcher</NavbarBrand>
-                    <Nav navbar>
+                    <Nav horizontal>
                         <NavItem>
-                            <NavLink className="nav-link" to="/search">Search Jobs</NavLink>
+                            <NavLink className="nav-link text-white" to="/about">About</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink className="nav-link text-white" to="/search">Search Jobs</NavLink>
                         </NavItem>
                     </Nav>
                 </div>

@@ -9,7 +9,7 @@ const JobListings = (props) => {
 
     const Featured = () => {
         return (
-            <Button color="outline-success">
+            <Button color="outline-success" size="sm">
                 Featured
             </Button>
             );
