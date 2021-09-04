@@ -1,18 +1,16 @@
 import React from 'react';
-import Search from './components/SearchComponent';
-import Header from './components/HeaderComponent';
-
+import Main from './components/Main'
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 
 const App = (props) => {
     return (
-      <div className="App">
-        <Header />
-        <Search />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Main />
+        </div>
+      </BrowserRouter>
     );
-
-
 }
 
 export default App;
