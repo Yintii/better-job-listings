@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Label } from 'reactstrap';
+import { Input, Label} from 'reactstrap';
 import { JOBS } from '../shared/Jobs';
 import JobListings from './JobListingsComponent';
 
@@ -8,6 +8,10 @@ class Search extends Component {
         super(props);
         this.state = {userInput: null, jobs: JOBS}
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    truncate(str){
+        return str.length > 140 ? str.substring(0,140) + '...' : str;
     }
 
     handleChange(event){
@@ -28,10 +32,10 @@ class Search extends Component {
         });
         return(
             <div className="container">
-                <div className="row px-5">
-                    <Label className="mt-5" for="searchInput">Search:</Label>
+                <div className="row mt-5">
+                    <Label for="searchInput">Search:</Label>
                     <Input className="mb-5" id="searchInput" type="text" value={this.state.userInput} onChange={this.handleChange} />
-                    <JobListings jobs={filteredJobs}/> 
+                    <JobListings jobs={filteredJobs} truncate={this.truncate}/>
                 </div>
             </div>
         );
