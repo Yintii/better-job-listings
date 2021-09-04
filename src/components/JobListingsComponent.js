@@ -26,7 +26,7 @@ const JobListings = (props) => {
                                     <h4 className="col-md-8 col-sm-12">{job.company}</h4>
                                 </div>
                                 <p>{job.position} - {job.pay}</p>
-                                {job.featured == true &&
+                                {job.featured === true &&
                                     <Featured />
                                 }
                             </CardTitle>
