@@ -3,7 +3,7 @@ import { Button,
          Card, 
          CardTitle, 
          CardText, 
-         CardBody } from 'reactstrap';
+         CardBody, Media } from 'reactstrap';
 
 const JobListings = (props) => {
     const jobListings = props.jobs.map(job => {
@@ -12,7 +12,11 @@ const JobListings = (props) => {
                     <Card className="container">
                         <CardBody className="row">
                             <CardTitle className="col-6">
-                                <h3>{job.company}</h3>
+                                <div className="row align-items-center mb-3">
+                                    <h4 className="col-8">{job.company}</h4>
+                                    <Media className="col-4" src={job.image} alt={job.company} width="50" height="50" />
+                                </div>
+                                
                                 <p>{job.position} - {job.pay}</p>
                             </CardTitle>
                             <CardText className="col-6">
