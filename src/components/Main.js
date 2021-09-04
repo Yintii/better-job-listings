@@ -2,20 +2,18 @@ import React, { Component } from 'react';
 import Search from './SearchComponent';
 import Header from './HeaderComponent';
 import Home from './Home';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-class Main extends Component {
-    render(){
-        return(
-            <div className="App">
-                <Header />
-                <Switch>
-                    <Route path="/" component={Home} />
-                    <Route path="/search" component={Search} />
-                    <Redirect to="/" />
-                </Switch>
-            </div>
-            );
-    }
+const Main = () => {
+    return(
+        <React.Fragment>
+            <Header />
+            <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/search' component={Search} />
+                <Redirect to='/' />
+            </Switch>
+        </React.Fragment>
+        );
 }
 export default Main;
