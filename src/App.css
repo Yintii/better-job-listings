@@ -3,3 +3,7 @@ ul, .footer-link{
     text-decoration: none;
     color: white;
 }
+
+.wrapper {
+    min-height: calc(100vh - 350px);
+}

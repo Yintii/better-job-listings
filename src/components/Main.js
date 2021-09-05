@@ -10,12 +10,15 @@ const Main = () => {
     return(
         <React.Fragment>
             <Header />
+            {/*This wrapper is for making sure the footer stays down */}
+            <div className="wrapper"> 
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route exact path='/search' component={Search} />
                     <Route exact path='/about' component={About} />
                     <Redirect to='/' />
                 </Switch>
+            </div>
             <Footer />
         </React.Fragment>
         );

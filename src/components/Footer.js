@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return(
+        <footer>
         <div className="container-fluid bg-dark text-white">
             <div className="row">
                 <div className="col-6 p-5">
@@ -36,8 +37,8 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-
         </div>
+        </footer>
     );
 }
 export default Footer;
