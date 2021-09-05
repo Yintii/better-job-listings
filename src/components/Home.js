@@ -21,7 +21,7 @@ const Home = () => {
                         </Button>
                     </Jumbotron>
                 </div>
-                <div class="col-md-4 mt-5">
+                <div class="mt-5 col-4 col-md-4">
                     <Sidebar featured={JOBS.filter(job => job.featured === true)}/>
                 </div>
             </div>

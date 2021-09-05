@@ -6,7 +6,7 @@ const Footer = () => {
         <footer>
         <div className="container-fluid bg-dark text-white">
             <div className="row">
-                <div className="col-6 p-5">
+                <div className="col-12 col-md-6 order-1 p-5">
                     123 apple road<br/>
                     AZ, United States<br/>
                     99999-4444<br/>
@@ -27,7 +27,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-6 p-5">
+                <div className="col-12 col-md-6 p-5">
                     <h5>Links</h5>
                     <hr />
                     <ul className="text-white">
