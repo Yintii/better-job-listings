@@ -15,9 +15,34 @@ const JobListings = (props) => {
             );
     }
 
+    const NoResults = () => {
+        return(
+            <Card className="p-5 my-5">
+                <CardTitle>
+                    <h1> No jobs :(</h1>
+                </CardTitle>
+                <CardText>
+                    <p>Try making your search more general for more results.</p>
+                </CardText>
+            </Card>
+        );
+    }
+
+    const ResultsDisplay = () =>{
+        if(jobListings.length > 0){
+            return(
+                <div className="my-5">
+                    {jobListings}
+                </div>
+                )
+        }else{
+            return(<NoResults />)
+        }
+    }
+
     const jobListings = props.jobs.map(job => {
             return(
-                <div key={job.id} className="col-md-12 col-lg-6 my-1">
+                <div key={job.id} className="col-md-12 col-lg-6 my-2">
                     <Card className="container">
                         <CardBody className="row">
                             <CardTitle className="col-6">
@@ -44,10 +69,7 @@ const JobListings = (props) => {
         return(
             <div className="container">
                 <div className="row">
-                    {jobListings}
-                </div>
-                <div className="row job-details">
-                    
+                    <ResultsDisplay />
                 </div>
             </div>
         );

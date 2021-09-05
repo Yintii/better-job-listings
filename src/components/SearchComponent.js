@@ -34,7 +34,7 @@ class Search extends Component {
             <div className="container px-5">
                 <div className="row mt-5">
                     <Label for="searchInput">Search:</Label>
-                    <Input className="mb-5" id="searchInput" type="text" value={this.state.userInput} onChange={this.handleChange} />
+                    <Input id="searchInput" type="text" value={this.state.userInput} onChange={this.handleChange} />
                     <JobListings jobs={filteredJobs} truncate={this.truncate}/>
                 </div>
             </div>

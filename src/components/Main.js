@@ -10,12 +10,12 @@ const Main = () => {
     return(
         <React.Fragment>
             <Header />
-            <Switch>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/search' component={Search} />
-                <Route exact path='/about' component={About} />
-                <Redirect to='/' />
-            </Switch>
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/search' component={Search} />
+                    <Route exact path='/about' component={About} />
+                    <Redirect to='/' />
+                </Switch>
             <Footer />
         </React.Fragment>
         );
