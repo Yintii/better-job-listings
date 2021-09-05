@@ -1,9 +1,11 @@
-ul, .footer-link{
+ul, a{
     list-style-type: none;
     text-decoration: none;
     color: white;
 }
-
+a:hover{
+    color:white;
+}
 
 .wrapper {
     min-height: calc(100vh - 350px);

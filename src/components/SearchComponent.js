@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Input, Label} from 'reactstrap';
-import { JOBS } from '../shared/Jobs';
 import JobListings from './JobListingsComponent';
 
 class Search extends Component {
     constructor(props){
         super(props);
-        this.state = {userInput: null, jobs: JOBS}
+        this.state = {userInput: null, jobs: this.props.jobs}
         this.handleChange = this.handleChange.bind(this);
     }
 

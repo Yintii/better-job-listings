@@ -4,6 +4,7 @@ import { Button,
          CardTitle, 
          CardText, 
          CardBody, Media } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const JobListings = (props) => {
 
@@ -45,8 +46,8 @@ const JobListings = (props) => {
                         <CardBody className="row">
                             <CardTitle className="col-12">
                                 <div className="row align-items-center mb-3">
-                                    <Media className="col-6 col-sm-6 order-2" src={job.image} alt={job.company} width="50" height="50" />
-                                    <h4 className="col-6">{job.company}</h4>
+                                    <Media className="col-6 col-sm-5 col-lg-4 order-2" src={job.image} alt={job.company} width="50" height="50" />
+                                    <h4 className="col-6 col-sm-7 col-lg-8">{job.company}</h4>
                                 </div>
                                 <p>{job.position} - {job.pay}</p>
                                 {job.featured === true &&
@@ -56,8 +57,12 @@ const JobListings = (props) => {
                             <CardText className="col-12">
                                 {props.truncate(job.description)}
                             </CardText>
-                            <Button className="col m-1" color="warning">Apply</Button>
-                            <Button className="col m-1" color="primary">More details</Button>
+                            <Link className="col m-1 btn btn-warning">
+                                Apply
+                            </Link>
+                            <Link className="col m-1 btn btn-primary" to={`/search/${job.id}/details`}>
+                                    Details
+                            </Link>
                         </CardBody>
                     </Card>
                 </div>
