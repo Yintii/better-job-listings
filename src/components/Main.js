@@ -1,9 +1,9 @@
 import React from 'react';
 import Search from './SearchComponent';
 import Header from './HeaderComponent';
+import Footer from './Footer';
 import Home from './Home';
 import About from './About';
-import Sidebar from './Sidebar'
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 const Main = () => {
@@ -16,6 +16,7 @@ const Main = () => {
                 <Route exact path='/about' component={About} />
                 <Redirect to='/' />
             </Switch>
+            <Footer />
         </React.Fragment>
         );
 }
