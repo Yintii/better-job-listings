@@ -7,7 +7,7 @@ const Sidebar = (props) =>{
     
     const renderJobs = props.featured.map(job => {
         return(
-            <Link to="/search" style={{ textDecoration: 'none' }} className="text-dark">
+            <Link to={`/search/${job.id}/details`} style={{ textDecoration: 'none' }} className="text-dark">
                 <Card className="my-4">
                     <CardImg top src={job.image} alt={job.company} height="100" />
                     <div className="bg-light p-2">
