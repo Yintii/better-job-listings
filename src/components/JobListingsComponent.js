@@ -57,11 +57,11 @@ const JobListings = (props) => {
                             <CardText className="col-12">
                                 {props.truncate(job.description)}
                             </CardText>
-                            <Link className="col m-1 btn btn-warning">
+                            <Link className="col m-1 btn btn-warning" to={`/search/${job.id}/apply`}>
                                 Apply
                             </Link>
-                            <Link className="col m-1 btn btn-primary" to={`/search/${job.id}/details`}>
-                                    Details
+                            <Link className="col m-1 btn btn-primary" to={`/search/${job.id}`}>
+                                Details
                             </Link>
                         </CardBody>
                     </Card>

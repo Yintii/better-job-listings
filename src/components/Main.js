@@ -7,13 +7,26 @@ import About from './About';
 import JobDetails from './JobDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { JOBS } from '../shared/Jobs';
+import Apply from './Apply';
 
 const Main = () => {
 
-    const RenderDetails = ({match}) => {
+    function getMatch(match){
+        return JOBS.filter(job => job.id === +match.params.jobId)[0];
+    }
+
+    const JobDetailsPage = ({match}) => {
         return(
             <JobDetails 
-                job={JOBS.filter(job => job.id === +match.params.jobId)[0]}
+                job={getMatch(match)}
+            />
+        );
+    }
+
+    const ApplyJobPage = ({match}) => {
+        return(
+            <Apply 
+                job={getMatch(match)}
             />
         );
     }
@@ -27,7 +40,8 @@ const Main = () => {
                     <Route exact path='/' component={Home} />
                     <Route exact path='/search' render={() => <Search jobs={JOBS}/>} />
                     <Route exact path='/about' component={About} />
-                    <Route path='/search/:jobId/details' component={RenderDetails} />
+                    <Route exact path='/search/:jobId' component={JobDetailsPage} />
+                    <Route path='/search/:jobId/apply' component={ApplyJobPage} />
                     <Redirect to='/' />
                 </Switch>
             </div>

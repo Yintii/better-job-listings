@@ -16,9 +16,8 @@ const Home = () => {
                             to be the top of our class, but don't take our word for it.
                             Read for yourself on how our system and process works for yourself.
                         </p>
-                        <Button>
-                            <Link className="text-white" style={{textDecoration: 'none'}} to="/about">Learn More</Link>
-                        </Button>
+                        <Link className="text-white btn btn-dark" to="/about">Learn More</Link>
+                        
                     </Jumbotron>
                 </div>
                 <div class="mt-5 col-4 col-md-4">
