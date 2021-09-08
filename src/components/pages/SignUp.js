@@ -24,7 +24,7 @@ const SignUp = (props) => {
     return (
         <div className="container">
             <div className="row d-flex justify-content-center py-5">
-                <div className="col-8">
+                <div className="col-12 col-md-10 px-5">
                     <Card>
                         <CardHeader>
                             <h2>Sign Up</h2>
@@ -132,6 +132,10 @@ const SignUp = (props) => {
                                             Sign up
                                         </Button>
                                     </Col>
+                                    <span className="col-12 text-center pt-3">
+                                        Already have an account?
+                                        <Link to="/account/login" style={{ color: 'blue' }}> Sign in here.</Link>
+                                    </span>
                                 </Row>
                             </LocalForm>
                         </CardBody>

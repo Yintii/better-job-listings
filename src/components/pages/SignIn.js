@@ -20,7 +20,7 @@ const SignIn = (props) => {
     return(
         <div className="container">
             <div className="row d-flex justify-content-center py-5">
-                <div className="col-8 py-5">
+                <div className="col-12 col-md-10 py-5">
                     <Card>
                         <CardHeader>
                             <h2>Sign in</h2>

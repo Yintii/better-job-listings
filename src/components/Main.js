@@ -48,7 +48,7 @@ const Main = (props) => {
             {/*This wrapper is for making sure the footer stays down */}
             <div className="wrapper"> 
                 <Switch>
-                    <Route exact path='/' component={Home} />
+                    <Route exact path='/' render={() => <Home jobs={props.jobs} user={props.user}/>} />
                     <Route exact path='/search' render={() => <Search jobs={props.jobs}/>} />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/account/login' render={ () => <SignIn user={props.user}/>} />

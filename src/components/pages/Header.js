@@ -6,15 +6,12 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
     return(
         <div>
-            <Navbar dark color="primary">
+            <Navbar dark color="dark">
                 <div className="container">
                     <NavbarBrand href="/">JobSearcher</NavbarBrand>
                     <Nav horizontal>
                         <NavItem>
                             <NavLink className="nav-link text-white" to="/search">Search Jobs</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="nav-link text-white" to="/account/login">Sign in</NavLink>
                         </NavItem>
                     </Nav>
                 </div>

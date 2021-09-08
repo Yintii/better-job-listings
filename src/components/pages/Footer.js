@@ -30,11 +30,22 @@ const Footer = () => {
                 <div className="col-12 col-md-6 p-5">
                     <h5>Links</h5>
                     <hr />
-                    <ul className="text-white">
-                        <li><Link className="footer-link" to="/">Home</Link></li>
-                        <li><Link className="footer-link" to="/about">About</Link></li>
-                        <li><Link className="footer-link" to="/search">Search</Link></li>
-                    </ul>
+                    <div className="row">
+                        <div className="col-6">
+                            <ul className="text-white">
+                                <li><Link className="footer-link" to="/">Home</Link></li>
+                                <li><Link className="footer-link" to="/about">About</Link></li>
+                                <li><Link className="footer-link" to="/search">Search</Link></li>
+                            </ul>
+                        </div>
+                        <div className="col-6">
+                            <ul className="text-white">
+                                <li><Link className="footer-link" to="/account/login">Sign in</Link></li>
+                                <li><Link className="footer-link" to="/account/register">Sign up</Link></li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
