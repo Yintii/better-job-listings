@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Label} from 'reactstrap';
-import JobListings from './JobListingsComponent';
+import JobListings from '../JobListingsComponent';
 
 class Search extends Component {
     constructor(props){

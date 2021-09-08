@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const Apply = ({job}) => {
     return(
@@ -24,6 +25,14 @@ const Apply = ({job}) => {
                             <Label>Resume / CV </Label>
                             <Input type="file" className="form-control-file" />
                             <Input type="submit" className="btn btn-success" />
+                            <span className="col-12 text-center pt-3">
+                                Log in for quick apply <Link style={{ color: 'blue' }} to="/account/login">Log in</Link>
+                            </span>
+                            <br/>
+                            <span className="col-12 text-center pt-3">
+                                Don't have an account?
+                                <Link to="/account/register" style={{ color: 'blue' }}> Sign up here.</Link>
+                            </span>
                         </FormGroup>
                     </Form>
                 </div>

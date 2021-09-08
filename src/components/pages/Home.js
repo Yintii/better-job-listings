@@ -1,8 +1,8 @@
 import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
-import Sidebar from './Sidebar';
-import { JOBS } from '../shared/Jobs';
+import Sidebar from '../Sidebar';
+import { JOBS } from '../../shared/Jobs';
  
 const Home = () => {
     return(

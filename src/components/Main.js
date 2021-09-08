@@ -1,18 +1,29 @@
 import React from 'react';
-import Search from './SearchComponent';
-import Header from './HeaderComponent';
-import Footer from './Footer';
-import Home from './Home';
-import About from './About';
+import Header from './pages/Header';
+import Footer from './pages/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Search from './pages/Search';
 import JobDetails from './JobDetails';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { JOBS } from '../shared/Jobs';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 import Apply from './Apply';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Main = () => {
+
+const mapStateToProps = state => {
+    return{
+        jobs: state.jobs,
+        user: state.user
+    }
+}
+
+
+const Main = (props) => {
 
     function getMatch(match){
-        return JOBS.filter(job => job.id === +match.params.jobId)[0];
+        return props.jobs.filter(job => job.id === +match.params.jobId)[0];
     }
 
     const JobDetailsPage = ({match}) => {
@@ -38,8 +49,10 @@ const Main = () => {
             <div className="wrapper"> 
                 <Switch>
                     <Route exact path='/' component={Home} />
-                    <Route exact path='/search' render={() => <Search jobs={JOBS}/>} />
+                    <Route exact path='/search' render={() => <Search jobs={props.jobs}/>} />
                     <Route exact path='/about' component={About} />
+                    <Route exact path='/account/login' render={ () => <SignIn user={props.user}/>} />
+                    <Route exact path='/account/register' render={ () => <SignUp user = {props.user}/>} />
                     <Route exact path='/search/:jobId' component={JobDetailsPage} />
                     <Route path='/search/:jobId/apply' component={ApplyJobPage} />
                     <Redirect to='/' />
@@ -49,4 +62,4 @@ const Main = () => {
         </React.Fragment>
         );
 }
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));

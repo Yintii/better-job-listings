@@ -11,10 +11,10 @@ const Header = () => {
                     <NavbarBrand href="/">JobSearcher</NavbarBrand>
                     <Nav horizontal>
                         <NavItem>
-                            <NavLink className="nav-link text-white" to="/about">About</NavLink>
+                            <NavLink className="nav-link text-white" to="/search">Search Jobs</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className="nav-link text-white" to="/search">Search Jobs</NavLink>
+                            <NavLink className="nav-link text-white" to="/account/login">Sign in</NavLink>
                         </NavItem>
                     </Nav>
                 </div>
