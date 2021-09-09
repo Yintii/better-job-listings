@@ -4,12 +4,13 @@ import { Form, FormGroup, Label, Input,
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
-const inputs = ['firstName', 'lastName', 'email', 'phoneNumber']
+
 
 /* This was getting ugly and long so I made a function to write it all for me*/
-const createFormInputs = (inputs) =>{
+const createFormInputs = () =>{
     const required = val => val && val.length;
     const onlyNumbers = val => /\d+/.test(val);
+    const inputs = ['firstName', 'lastName', 'email', 'phoneNumber']
     const inputFields = inputs.map(input => {
         let validators;
         let messages;
@@ -51,7 +52,7 @@ const createFormInputs = (inputs) =>{
                 
             }
         }
-        
+
         return (
             <React.Fragment>
                 <Label md={4} htmlFor={input}>{inputName}</Label>
@@ -88,12 +89,15 @@ const Apply = ({job}) => {
                 <div className="col-12 col-md-6">
                     <LocalForm>
                         <Row className="form-group" id="application">
-                            {createFormInputs(inputs)}
+                            
+                            {/**Saving a lot of space with this */}
+                            {createFormInputs()}
+
                             <Label>Resume / CV </Label>
                             <Input type="file" className="form-control-file" />
                             <Input type="submit" className="btn btn-success" />
                             <span className="col-12 text-center pt-3">
-                                Log in for quick apply <Link style={{ color: 'blue' }} to="/account/login">Log in</Link>
+                                <Link style={{ color: 'blue' }} to="/account/login">Log in</Link> for quick apply
                             </span>
                             <br/>
                             <span className="col-12 text-center pt-3">
