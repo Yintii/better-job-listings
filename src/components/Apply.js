@@ -1,6 +1,80 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label, Input,
+        Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { Control, LocalForm, Errors } from 'react-redux-form';
+
+const inputs = ['firstName', 'lastName', 'email', 'phoneNumber']
+
+/* This was getting ugly and long so I made a function to write it all for me*/
+const createFormInputs = (inputs) =>{
+    const required = val => val && val.length;
+    const onlyNumbers = val => /\d+/.test(val);
+    const inputFields = inputs.map(input => {
+        let validators;
+        let messages;
+        let inputName;
+
+        switch (input) {
+            case 'firstName':
+                inputName = 'First Name'
+                break;
+            case 'lastName':
+                inputName = 'Last Name'
+                break;
+            case 'email':
+                inputName = 'Email'
+                break;
+            case 'phoneNumber':
+                inputName = 'Phone Number'
+                break;
+            default:
+                return 'hello?'
+                break;
+        }
+
+        if(input === 'phoneNumber'){
+            validators = {
+                required,
+                onlyNumbers
+            }
+            messages = {
+                required: `Please enter your ${input}`,
+                onlyNumbers: 'Please enter a valid phone numer'
+            }
+        }else{
+            validators = {
+                required
+            }
+            messages = {
+                required: `Please enter your ${input}`
+                
+            }
+        }
+        
+        return (
+            <React.Fragment>
+                <Label md={4} htmlFor={input}>{inputName}</Label>
+                <Col md={12}>
+                    <Control.text model={`.${input}`}
+                        id={input}
+                        name={input}
+                        className="form-control"
+                        validators={validators}
+                    />
+                    <Errors
+                        className="text-danger"
+                        model={`.${input}`}
+                        show="touched"
+                        component="div"
+                        messages={messages}
+                    />
+                </Col>
+            </React.Fragment>
+        );
+    });
+    return inputFields;
+}
 
 const Apply = ({job}) => {
     return(
@@ -12,16 +86,9 @@ const Apply = ({job}) => {
                     <p>{job.description}</p>
                 </div>
                 <div className="col-12 col-md-6">
-                    <Form>
-                        <FormGroup id="application">
-                            <Label>First Name </Label>
-                            <Input type="text"/>
-                            <Label>Last Name </Label>
-                            <Input type="text" />
-                            <Label>Email </Label>
-                            <Input type="text" />
-                            <Label>Phone Number </Label>
-                            <Input type="number" />
+                    <LocalForm>
+                        <Row className="form-group" id="application">
+                            {createFormInputs(inputs)}
                             <Label>Resume / CV </Label>
                             <Input type="file" className="form-control-file" />
                             <Input type="submit" className="btn btn-success" />
@@ -33,8 +100,8 @@ const Apply = ({job}) => {
                                 Don't have an account?
                                 <Link to="/account/register" style={{ color: 'blue' }}> Sign up here.</Link>
                             </span>
-                        </FormGroup>
-                    </Form>
+                        </Row>
+                    </LocalForm>
                 </div>
             </div>
         </div>
