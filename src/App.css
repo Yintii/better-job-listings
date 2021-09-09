@@ -14,3 +14,14 @@ a:hover{
 #application > input {
     margin-bottom: 2rem;
 }
+
+.blog-link{
+    color:black;
+}
+.readmoreLink:hover, .blog-link:hover{
+    color:orange;
+}
+
+.readmoreLink{
+    color:blue;
+}

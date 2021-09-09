@@ -11,6 +11,9 @@ const Header = () => {
                     <NavbarBrand href="/">JobSearcher</NavbarBrand>
                     <Nav horizontal>
                         <NavItem>
+                            <NavLink className="nav-link text-white" to="/blog">Blog</NavLink>
+                        </NavItem>
+                        <NavItem>
                             <NavLink className="nav-link text-white" to="/search">Search Jobs</NavLink>
                         </NavItem>
                     </Nav>
