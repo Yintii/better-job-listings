@@ -63,15 +63,18 @@ const Main = (props) => {
             {/*This wrapper is for making sure the footer stays down */}
             <div className="wrapper"> 
                 <Switch>
-                    <Route exact path='/' render={() => <Home jobs={props.jobs} user={props.user} posts={props.blogPosts}/>} />
-                    <Route exact path='/search' render={() => <Search jobs={props.jobs}/>} />
-                    <Route exact path='/about' component={About} />
-                    <Route exact path='/blog' render={() => <Blog posts={props.blogPosts} />} />
-                    <Route exact path='/blog/:postId' component={BlogPostPage} />
-                    <Route exact path='/account/login' render={ () => <SignIn user={props.user}/>} />
-                    <Route exact path='/account/register' render={ () => <SignUp user = {props.user}/>} />
-                    <Route exact path='/search/:jobId' component={JobDetailsPage} />
-                    <Route path='/search/:jobId/apply' component={ApplyJobPage} />
+                    <Route exact path='/'                    render    = {()=><Home jobs={props.jobs} 
+                                                                                    user={props.user} 
+                                                                                    posts={props.blogPosts}
+                                                                              />}/>
+                    <Route exact path='/about'               component = {About}/>
+                    <Route exact path='/blog'                render    = {()=><Blog posts={props.blogPosts}/>}/>
+                    <Route exact path='/blog/:postId'        component = {BlogPostPage}/>
+                    <Route exact path='/account/login'       render    = {()=><SignIn user={props.user}/>}/>
+                    <Route exact path='/account/register'    render    = {()=><SignUp user={props.user}/>}/>
+                    <Route exact path='/search'              render    = {()=><Search jobs={props.jobs}/>}/>
+                    <Route exact path='/search/:jobId'       component = {JobDetailsPage} />
+                    <Route       path='/search/:jobId/apply' component = {ApplyJobPage} />
                     <Redirect to='/' />
                 </Switch>
             </div>

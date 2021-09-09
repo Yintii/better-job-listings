@@ -1,14 +1,18 @@
 import React from 'react';
-import { Card, CardHeader, CardText } from 'reactstrap';
+import { Card, CardHeader, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 const Posts = (data) =>{
     const posts = data.map(post =>{
         return(
-            <div className="col-12">
-                <Link className="blog-link" to={`/blog/${post.id}`}><h1>{post.title}</h1></Link>
-                <span>{post.author}</span>
-                <p>{post.body}</p>
+            <div className="col-12 py-3">
+                <Card className="px-3">
+                    <CardBody>
+                        <Link className="blog-link" to={`/blog/${post.id}`}><h1>{post.title}</h1></Link>
+                        <span className="text-muted underlined">By {post.author}</span>
+                        <p>{post.body}</p>
+                    </CardBody>
+                </Card>
             </div>
         );
     });
@@ -21,7 +25,7 @@ const Blog = (props) =>{
             <div className="row py-5">
                 <h1 className="text-center">JobSurching Journey</h1>
                 <hr />
-                {Posts(props.posts)}
+                    {Posts(props.posts)}
             </div>
         </div>
     );

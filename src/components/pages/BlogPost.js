@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlogPost = ({post}) =>{
     return(
-        <div className="container">
+        <div className="container bg-dark text-white my-5 p-5">
             <div className="row">
                 <div className="col-12 p-5">
                     <h1>{post.title}</h1>
