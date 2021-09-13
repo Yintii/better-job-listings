@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Card, CardHeader, CardText } from 'reactstrap';
+import { Jumbotron, Card } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import Sidebar from '../Sidebar';
 

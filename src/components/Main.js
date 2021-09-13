@@ -59,7 +59,7 @@ const Main = (props) => {
 
     return(
         <React.Fragment>
-            <Header />
+            <Header user={props.user}/>
             {/*This wrapper is for making sure the footer stays down */}
             <div className="wrapper"> 
                 <Switch>
@@ -67,14 +67,14 @@ const Main = (props) => {
                                                                                     user={props.user} 
                                                                                     posts={props.blogPosts}
                                                                               />}/>
-                    <Route exact path='/about'               component = {About}/>
-                    <Route exact path='/blog'                render    = {()=><Blog posts={props.blogPosts}/>}/>
-                    <Route exact path='/blog/:postId'        component = {BlogPostPage}/>
-                    <Route exact path='/account/login'       render    = {()=><SignIn user={props.user}/>}/>
-                    <Route exact path='/account/register'    render    = {()=><SignUp user={props.user}/>}/>
-                    <Route exact path='/search'              render    = {()=><Search jobs={props.jobs}/>}/>
-                    <Route exact path='/search/:jobId'       component = {JobDetailsPage} />
-                    <Route       path='/search/:jobId/apply' component = {ApplyJobPage} />
+                    <Route exact path='/about'            render={() => <About user={props.user}/>}/>
+                    <Route exact path='/blog'             render={() => <Blog posts={props.blogPosts} user={props.user}/>}/>
+                    <Route exact path='/blog/:postId'     render={() => <BlogPostPage user={props.user}/>}/>
+                    <Route exact path='/account/login'    render={() => <SignIn user={props.user}/>}/>
+                    <Route exact path='/account/register' render={() => <SignUp user={props.user}/>}/>
+                    <Route exact path='/search'           render={() => <Search jobs={props.jobs} user={props.user}/>}/>
+                    <Route exact path='/search/:jobId'    render={() => <JobDetailsPage user={props.user} />} />
+                    <Route path='/search/:jobId/apply'    render={() => <ApplyJobPage user={props.user} />} />
                     <Redirect to='/' />
                 </Switch>
             </div>
