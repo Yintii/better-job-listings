@@ -1,4 +1,5 @@
 import React from 'react';
+import GoBackButton from '../GoBackButton';
 
 const BlogPost = ({post}) =>{
     return(
@@ -9,6 +10,7 @@ const BlogPost = ({post}) =>{
                     <p className="pb-2">{post.author}</p>
                     <p>{post.body}</p>
                 </div>
+            <GoBackButton />
             </div>
         </div>
     );

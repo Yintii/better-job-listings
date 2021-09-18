@@ -43,9 +43,9 @@ const Home = (props) => {
             </Jumbotron>
             {/**Main and sidebar */}
             <div className="container" >
-                <div className="row">
-                    <div class="col-md-8">
-                        <Jumbotron className="m-5">
+                <div className="row d-flex justify-content-center">
+                    <div class="col-10 col-md-6 mx-auto">
+                        <Jumbotron className="py-5">
                             <h3 className="display-3">JobSurcher</h3>
                             <hr />
                             <p className="lead">We're like all the other guys, but even better. We work

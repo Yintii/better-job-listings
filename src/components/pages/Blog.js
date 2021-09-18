@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Posts = (data) =>{
     const posts = data.map(post =>{
         return(
-            <div className="col-12 py-3">
+            <div className="col-12 col-md-6 py-3 mx-auto">
                 <Card className="px-3">
                     <CardBody>
                         <Link className="blog-link" to={`/blog/${post.id}`}><h1>{post.title}</h1></Link>
