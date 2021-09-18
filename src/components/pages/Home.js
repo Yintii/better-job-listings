@@ -24,6 +24,7 @@ const LatestBlogPosts = ({posts}) =>{
 const Home = (props) => {
     return(
         <React.Fragment>
+            
             {/**Lets find your dream job / sign in - register */}
             <Jumbotron className="container-fluid p-5">
                 <div className="row">

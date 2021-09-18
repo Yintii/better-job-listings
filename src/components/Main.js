@@ -13,7 +13,7 @@ import SignUp from './pages/SignUp';
 import Apply from './Apply';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import DynamicScrollToTop from './DynamicScrollToTop';
 
 const mapStateToProps = state => {
     return{
@@ -61,6 +61,7 @@ const Main = (props) => {
     return(
         <React.Fragment>
             <Header />
+            <DynamicScrollToTop />
             {/*This wrapper is for making sure the footer stays down */}
             <div className="wrapper"> 
                 <Switch>
