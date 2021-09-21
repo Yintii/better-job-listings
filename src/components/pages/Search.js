@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Label} from 'reactstrap';
 import JobListings from '../JobListingsComponent';
+import { Loading } from '../Loading';
 
 class Search extends Component {
     constructor(props){
@@ -29,6 +30,8 @@ class Search extends Component {
                 } 
             }
         });
+
+
         return(
             <div className="container px-5">
                 <div className="row mt-5">

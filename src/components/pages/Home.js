@@ -60,7 +60,9 @@ const Home = (props) => {
                         <LatestBlogPosts posts={props.posts}/>
                     </div>
                     <div class="mt-5 col-12 col-md-4 px-5">
-                        <Sidebar featured={props.jobs.filter(job => job.featured === true)}/>
+                        <Sidebar featured={props.jobs.filter(job => job.featured === true)}
+                                  jobsLoading={props.jobsLoading}
+                                  jobsFailed={props.jobsFailed}/>
                     </div>
                 </div>
             </div>

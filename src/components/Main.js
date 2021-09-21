@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './pages/Header';
 import Footer from './pages/Footer';
 import Home from './pages/Home';
@@ -14,6 +14,7 @@ import Apply from './Apply';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import DynamicScrollToTop from './DynamicScrollToTop';
+import { addJob, fetchJobs } from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
     return{
@@ -23,8 +24,16 @@ const mapStateToProps = state => {
     }
 }
 
+const mapDispatchToProps = {
+    addJob: (company, position, pay, descrition, image, featured) => (addJob(company, position, pay, descrition, image, featured)),
+    fetchJobs: () => (fetchJobs())
+}
 
 const Main = (props) => {
+
+    useEffect(()=>{
+        props.fetchJobs();
+    }, [])
 
     function getMatchingJob(match){
         return props.jobs.filter(job => job.id === +match.params.jobId)[0];
@@ -65,7 +74,9 @@ const Main = (props) => {
             {/*This wrapper is for making sure the footer stays down */}
             <div className="wrapper"> 
                 <Switch>
-                    <Route exact path='/'                    render    = {()=><Home jobs={props.jobs} 
+                    <Route exact path='/'                    render    = {()=><Home jobs={props.jobs.jobs}
+                                                                                    jobsLoading={props.jobs.isLoading}
+                                                                                    jobsErr={props.jobs.err}
                                                                                     user={props.user} 
                                                                                     posts={props.blogPosts}
                                                                               />}/>
@@ -74,7 +85,7 @@ const Main = (props) => {
                     <Route exact path='/blog/:postId'        component = {BlogPostPage}/>
                     <Route exact path='/account/login'       render    = {()=><SignIn user={props.user}/>}/>
                     <Route exact path='/account/register'    render    = {()=><SignUp user={props.user}/>}/>
-                    <Route exact path='/search'              render    = {()=><Search jobs={props.jobs}/>}/>
+                    <Route exact path='/search'              render    = {()=><Search jobs={props.jobs.jobs}/>}/>
                     <Route exact path='/search/:jobId'       component = {JobDetailsPage} />
                     <Route       path='/search/:jobId/apply' component = {ApplyJobPage} />
                     <Route exact path='/account'             render    = {()=> <AccountPage user={props.user}/>}/>
@@ -85,4 +96,4 @@ const Main = (props) => {
         </React.Fragment>
         );
 }
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { Card, CardTitle, CardText, CardImg } from 'reactstrap';
+import { Loading } from './Loading';
 
 
-const Sidebar = (props) =>{
+const Sidebar = ({featured, jobsLoading, jobsFailed}) =>{
     
-    const renderJobs = props.featured.map(job => {
+    const renderJobs = featured.map(job => {
         return(
             <Link to={`/search/${job.id}`} style={{ textDecoration: 'none' }} className="text-dark">
                 <div className="col-8 col-sm-12 col-lg-8 col-xl-6 mx-auto d-flex justify-content-left">
@@ -21,6 +22,16 @@ const Sidebar = (props) =>{
         );
     })
 
+    if(jobsLoading){
+        return (
+            <Loading />
+        )
+    }
+    if(jobsFailed){
+        return(
+            <h4>Failed to load</h4>
+        )
+    }
     
     return(
         <React.Fragment>

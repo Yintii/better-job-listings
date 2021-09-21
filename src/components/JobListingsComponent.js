@@ -69,6 +69,7 @@ const JobListings = (props) => {
             );
         });
 
+        
         return(
             <div className="container">
                 <div className="row d-flex align-items-center">
