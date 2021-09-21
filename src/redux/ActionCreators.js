@@ -14,11 +14,11 @@ export const addJob = (company, position, pay, description, image, featured)=>({
 });
 
 export const fetchJobs = () => dispatch => {
-    dispatch(jobsLoading());
+    //dispatch(jobsLoading());
 
-    setTimeout(() => {
+    //setTimeout(() => {
         dispatch(addJobs(JOBS));
-    }, 2000);
+    //}, 2000);
 };
 
 export const jobsLoading = () => ({
