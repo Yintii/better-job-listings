@@ -85,7 +85,10 @@ const Main = (props) => {
                     <Route exact path='/blog/:postId'        component = {BlogPostPage}/>
                     <Route exact path='/account/login'       render    = {()=><SignIn user={props.user}/>}/>
                     <Route exact path='/account/register'    render    = {()=><SignUp user={props.user}/>}/>
-                    <Route exact path='/search'              render    = {()=><Search jobs={props.jobs.jobs}/>}/>
+                    <Route exact path='/search'              render    = {()=><Search jobs={props.jobs.jobs}
+                                                                                      jobsLoading={props.jobs.isLoading}
+                                                                                      jobsErr={props.jobs.err}
+                                                                                    />}/>
                     <Route exact path='/search/:jobId'       component = {JobDetailsPage} />
                     <Route       path='/search/:jobId/apply' component = {ApplyJobPage} />
                     <Route exact path='/account'             render    = {()=> <AccountPage user={props.user}/>}/>

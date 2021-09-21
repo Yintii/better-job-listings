@@ -5,6 +5,8 @@ import { Button,
          CardText, 
          CardBody, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { Loading } from './Loading';
+import { actions } from 'react-redux-form';
 
 const JobListings = (props) => {
 
@@ -69,6 +71,25 @@ const JobListings = (props) => {
             );
         });
 
+        if(props.jobsLoading){
+            return(
+                <div className="container">
+                    <div className="row">
+                        <Loading />
+                    </div>
+                </div>
+            )
+        }
+
+    if (props.jobsFailed) {
+        return (
+            <div className="container">
+                <div className="row">
+                    <h4>Failed to load</h4>
+                </div>
+            </div>
+        )
+    }
         
         return(
             <div className="container">

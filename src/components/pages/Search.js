@@ -37,7 +37,10 @@ class Search extends Component {
                 <div className="row mt-5">
                     <Label for="searchInput">Search:</Label>
                     <Input id="searchInput" type="text" value={this.state.userInput} onChange={this.handleChange} />
-                    <JobListings jobs={filteredJobs} truncate={this.truncate}/>
+                    <JobListings jobs={filteredJobs}
+                                 truncate={this.truncate}
+                                 jobsLoading={this.props.jobsLoading}
+                                 jobsErr={this.props.jobsErr}/>
                 </div>
             </div>
         );
