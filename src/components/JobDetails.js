@@ -1,5 +1,5 @@
 import React from 'react';
-import { Media, Button } from 'reactstrap';
+import { Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import GoBackButton from './GoBackButton';
 

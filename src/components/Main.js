@@ -36,7 +36,7 @@ const Main = (props) => {
     }, [])
 
     function getMatchingJob(match){
-        return props.jobs.filter(job => job.id === +match.params.jobId)[0];
+        return props.jobs.jobs.filter(job => job.id === +match.params.jobId)[0];
     }
 
     function getMatchingBlogPost(match) {

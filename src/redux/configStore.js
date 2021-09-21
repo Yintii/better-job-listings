@@ -1,20 +1,16 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { Jobs } from './jobs';
-import { Users } from './users';
-import { BlogPosts } from './blogposts';
+import { createStore, applyMiddleware } from 'redux';
+import { persistStore } from 'redux-persist';
 
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-export const ConfigureStore = () => {
-    const store = createStore(
-        combineReducers({
-            jobs: Jobs,
-            users: Users,
-            blogPosts: BlogPosts
-        }),
-        applyMiddleware(thunk, logger)
+import persistantReducer from './reducer';
+
+const middlewares = [thunk, logger]
+
+export const store = createStore(
+        persistantReducer,
+        applyMiddleware(...middlewares)
     );
 
-    return store;
-};
+export const persistor = persistStore(store);
